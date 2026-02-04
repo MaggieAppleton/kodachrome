@@ -9,6 +9,11 @@ const explorations = [
     title: "Grainy Gradients",
     desc: "Canvas gradients with grain and organic motion",
   },
+  {
+    id: "exploration-03",
+    title: "Image Treatments",
+    desc: "Grain, dithering, halftone, pixelation, and ASCII effects",
+  },
 ];
 
 const grid = document.getElementById("grid");

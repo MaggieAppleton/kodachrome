@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "image": "flower2",
+      "grainAmount": 0.14,
+      "grainSize": 2,
+      "grainAnimated": false,
+      "ditherMode": "bayer4",
+      "ditherIntensity": 0.14,
+      "ditherColors": 11,
+      "halftoneAmount": 0,
+      "halftoneSize": 9,
+      "halftoneAngle": 35,
+      "halftoneCMYK": false,
+      "pixelSize": 16,
+      "pixelShape": "square",
+      "posterize": 20,
+      "saturation": 1,
+      "contrast": 1.6,
+      "asciiSize": 0,
+      "asciiColor": true
+    },
+    "createdAt": "2026-02-04T13:46:38.983Z"
+  }
+]

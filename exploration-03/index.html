@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 03 - Image Treatments</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    <snapshot-manager></snapshot-manager>
+    
+    <control-panel title="Image Treatments">
+      <panel-section title="Source">
+        <select-control key="image" label="Image" value="flower1" options="flower1:Flower 1,flower2:Flower 2"></select-control>
+      </panel-section>
+
+      <panel-section title="Grain">
+        <slider-control key="grainAmount" label="Amount" min="0" max="1" step="0.01" value="0"></slider-control>
+        <slider-control key="grainSize" label="Size" min="1" max="4" step="0.5" value="1"></slider-control>
+        <checkbox-control key="grainAnimated" label="Animated" checked="false"></checkbox-control>
+      </panel-section>
+
+      <panel-section title="Dithering">
+        <select-control key="ditherMode" label="Mode" value="none" options="none:None,bayer2:Bayer 2x2,bayer4:Bayer 4x4,bayer8:Bayer 8x8"></select-control>
+        <slider-control key="ditherIntensity" label="Intensity" min="0" max="1" step="0.01" value="0.5"></slider-control>
+        <slider-control key="ditherColors" label="Color levels" min="2" max="16" step="1" value="4"></slider-control>
+      </panel-section>
+
+      <panel-section title="Halftone">
+        <slider-control key="halftoneAmount" label="Amount" min="0" max="1" step="0.01" value="0"></slider-control>
+        <slider-control key="halftoneSize" label="Dot size" min="2" max="20" step="1" value="6"></slider-control>
+        <slider-control key="halftoneAngle" label="Angle" min="0" max="90" step="5" value="45"></slider-control>
+        <checkbox-control key="halftoneCMYK" label="CMYK mode" checked="false"></checkbox-control>
+      </panel-section>
+
+      <panel-section title="Pixelation">
+        <slider-control key="pixelSize" label="Pixel size" min="1" max="64" step="1" value="1"></slider-control>
+        <select-control key="pixelShape" label="Shape" value="square" options="square:Square,circle:Circle,diamond:Diamond"></select-control>
+      </panel-section>
+
+      <panel-section title="Color">
+        <slider-control key="posterize" label="Posterize" min="2" max="32" step="1" value="32"></slider-control>
+        <slider-control key="saturation" label="Saturation" min="0" max="2" step="0.05" value="1"></slider-control>
+        <slider-control key="contrast" label="Contrast" min="0.5" max="2" step="0.05" value="1"></slider-control>
+      </panel-section>
+
+      <panel-section title="ASCII">
+        <slider-control key="asciiSize" label="Cell size" min="0" max="24" step="1" value="0"></slider-control>
+        <checkbox-control key="asciiColor" label="Colored" checked="true"></checkbox-control>
+      </panel-section>
+    </control-panel>
+
+    <canvas id="canvas"></canvas>
+    <canvas id="ascii-canvas"></canvas>
+    
+    <script type="module" src="../../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
