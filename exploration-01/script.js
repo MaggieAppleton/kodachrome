@@ -267,6 +267,17 @@ const syncControlsWithState = () => {
   });
 };
 
+// Listen for snapshot loads
+document.addEventListener('snapshot-load', (event) => {
+  const { state: newState } = event.detail;
+  Object.assign(state, newState);
+  syncControlsWithState();
+  startOrStopAnimation();
+  if (!isMotionActive()) {
+    render(0);
+  }
+});
+
 // Wait for custom elements to be defined, then sync
 customElements.whenDefined('slider-control').then(() => {
   customElements.whenDefined('oklch-picker').then(() => {

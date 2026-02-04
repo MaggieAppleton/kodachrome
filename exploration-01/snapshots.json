@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "ringCount": 6,
+      "spokeCount": 12,
+      "gridRadius": 0.78,
+      "nodeBrightness": 0.55,
+      "nodeSize": 0.9,
+      "gridBrightness": 0.25,
+      "nodeRandomness": 0.59,
+      "bgL": 0.14492753623188406,
+      "bgC": 0.05,
+      "bgH": 242.6086956521739,
+      "gridL": 0.644927536231884,
+      "gridC": 0.02,
+      "gridH": 100,
+      "nodeL": 0.92,
+      "nodeC": 0.08,
+      "nodeH": 90,
+      "rotationSpeed": 0.12,
+      "twinkleRate": 0.76,
+      "pulseAmplitude": 0.68,
+      "seed": 42
+    },
+    "createdAt": "2026-02-04T12:26:29.952Z"
+  }
+]
