@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 02 - Grainy Gradients</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    
+    <control-panel title="Grainy Gradients">
+      <panel-section title="Colors">
+        <oklch-picker key="color1" label="Color 1" lightness="0.65" chroma="0.2" hue="280"></oklch-picker>
+        <oklch-picker key="color2" label="Color 2" lightness="0.7" chroma="0.18" hue="180"></oklch-picker>
+        <oklch-picker key="color3" label="Color 3" lightness="0.55" chroma="0.22" hue="30"></oklch-picker>
+      </panel-section>
+
+      <panel-section title="Motion">
+        <slider-control key="speed" label="Speed" min="0" max="1" step="0.01" value="0.3"></slider-control>
+      </panel-section>
+
+      <panel-section title="Blobs">
+        <slider-control key="blobSize" label="Size" min="0.2" max="3" step="0.1" value="0.8"></slider-control>
+        <slider-control key="softness" label="Softness" min="0.1" max="1.5" step="0.05" value="0.5"></slider-control>
+        <slider-control key="complexity" label="Complexity" min="1" max="5" step="1" value="2"></slider-control>
+      </panel-section>
+
+      <panel-section title="Grain">
+        <select-control key="grainStyle" label="Style" value="film" options="film:Film grain,ordered:Ordered dither,halftone:Halftone"></select-control>
+        <slider-control key="grainIntensity" label="Intensity" min="0" max="1" step="0.01" value="0.15"></slider-control>
+        <slider-control key="halftoneSize" label="Dot size" min="1" max="10" step="0.5" value="4"></slider-control>
+      </panel-section>
+    </control-panel>
+
+    <canvas id="canvas"></canvas>
+    
+    <script type="module" src="../../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
