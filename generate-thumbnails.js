@@ -173,17 +173,36 @@ async function main() {
 
     console.log(`Found ${explorations.length} explorations\n`);
 
-    // Generate thumbnails for each exploration
-    for (const exploration of explorations) {
+    // Filter out explorations that already have thumbnails
+    const explorationsNeedingThumbnails = explorations.filter((exploration) => {
       const explorationPath = join(__dirname, exploration);
-      try {
-        await generateThumbnail(explorationPath, exploration);
-      } catch (error) {
-        console.error(`❌ Error generating thumbnail for ${exploration}:`, error.message);
+      const thumbnailPath = join(explorationPath, "thumb.png");
+      const exists = existsSync(thumbnailPath);
+      
+      if (exists) {
+        console.log(`⏭️  Skipping ${exploration} (thumbnail exists)`);
       }
-    }
+      
+      return !exists;
+    });
 
-    console.log("\n🎉 All thumbnails generated!");
+    if (explorationsNeedingThumbnails.length === 0) {
+      console.log("\n✨ All explorations already have thumbnails!");
+    } else {
+      console.log(`\nGenerating ${explorationsNeedingThumbnails.length} thumbnail(s)...\n`);
+
+      // Generate thumbnails for each exploration
+      for (const exploration of explorationsNeedingThumbnails) {
+        const explorationPath = join(__dirname, exploration);
+        try {
+          await generateThumbnail(explorationPath, exploration);
+        } catch (error) {
+          console.error(`❌ Error generating thumbnail for ${exploration}:`, error.message);
+        }
+      }
+
+      console.log("\n🎉 All thumbnails generated!");
+    }
   } finally {
     // Stop dev server
     console.log("\n🛑 Stopping dev server...");
