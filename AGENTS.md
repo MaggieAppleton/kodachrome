@@ -1,4 +1,4 @@
-This repo is a playground for developing the Github Next visual brand.
+This repo is Kodachrome – a playground for developing the Github Next visual brand.
 
 The main thing here right now is a grid of experiments: each card opens a full-screen canvas page where I can explore gradients, grain, dithering, textures, images, and motion. These experiments are deliberately isolated so I can try different visual directions without the rest of the system getting messy.
 

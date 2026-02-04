@@ -1,4 +1,4 @@
-# Next Visuals
+# Kodachrome
 
 A playground for developing the GitHub Next visual brand. Contains isolated experiments exploring gradients, grain, dithering, textures, and motion.
 
