@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
-import { readdirSync, statSync } from "fs";
+import { readdirSync, statSync, existsSync, readFileSync } from "fs";
 import { spawn } from "child_process";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -10,8 +10,24 @@ const __dirname = dirname(__filename);
 const THUMBNAIL_WIDTH = 800;
 const THUMBNAIL_HEIGHT = 600;
 const DEV_SERVER_URL = "http://localhost:5173";
+const STATES_FILE = join(__dirname, "thumbnail-states.json");
 
-async function generateThumbnail(explorationPath, explorationName) {
+// Load saved states from JSON file if it exists
+function loadSavedStates() {
+  if (existsSync(STATES_FILE)) {
+    try {
+      const content = readFileSync(STATES_FILE, "utf-8");
+      return JSON.parse(content);
+    } catch (e) {
+      console.warn("⚠️  Could not parse thumbnail-states.json:", e.message);
+      return {};
+    }
+  }
+  console.log("ℹ️  No thumbnail-states.json found, using default values");
+  return {};
+}
+
+async function generateThumbnail(explorationPath, explorationName, savedStates) {
   console.log(`📸 Generating thumbnail for ${explorationName}...`);
 
   const browser = await puppeteer.launch({
@@ -25,6 +41,17 @@ async function generateThumbnail(explorationPath, explorationName) {
     height: THUMBNAIL_HEIGHT,
     deviceScaleFactor: 2, // For retina/high-DPI
   });
+
+  // Inject saved state into localStorage BEFORE navigating
+  const stateKey = `${explorationName}-state`;
+  if (savedStates[stateKey]) {
+    // Navigate to the base URL first to set localStorage for that origin
+    await page.goto(DEV_SERVER_URL, { waitUntil: "domcontentloaded" });
+    await page.evaluate((key, state) => {
+      localStorage.setItem(key, JSON.stringify(state));
+    }, stateKey, savedStates[stateKey]);
+    console.log(`   └─ Applied saved state for ${explorationName}`);
+  }
 
   // Navigate to the exploration via dev server
   const explorationUrl = `${DEV_SERVER_URL}/${explorationName}/index.html`;
@@ -127,6 +154,9 @@ async function main() {
   const server = await startDevServer();
 
   try {
+    // Load saved states from JSON file
+    const savedStates = loadSavedStates();
+
     // Find all exploration directories
     const items = readdirSync(__dirname);
     const explorations = items.filter((item) => {
@@ -142,7 +172,7 @@ async function main() {
     for (const exploration of explorations) {
       const explorationPath = join(__dirname, exploration);
       try {
-        await generateThumbnail(explorationPath, exploration);
+        await generateThumbnail(explorationPath, exploration, savedStates);
       } catch (error) {
         console.error(`❌ Error generating thumbnail for ${exploration}:`, error.message);
       }
