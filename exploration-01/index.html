@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 01 - Constellation Machine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    
+    <control-panel title="Constellation Machine">
+      <panel-section title="Density">
+        <slider-control key="ringCount" label="Rings" min="3" max="24" step="1" value="12"></slider-control>
+        <slider-control key="spokeCount" label="Spokes" min="6" max="48" step="1" value="24"></slider-control>
+        <slider-control key="gridRadius" label="Size" min="0.35" max="0.95" step="0.01" value="0.78"></slider-control>
+        <slider-control key="nodeRandomness" label="Randomness" min="0" max="1" step="0.01" value="0"></slider-control>
+      </panel-section>
+
+      <panel-section title="Style">
+        <slider-control key="nodeBrightness" label="Node brightness" min="0.1" max="1" step="0.05" value="0.65"></slider-control>
+        <slider-control key="nodeSize" label="Node size" min="0.6" max="3.2" step="0.1" value="1.6"></slider-control>
+        <slider-control key="gridBrightness" label="Grid brightness" min="0" max="1" step="0.05" value="0.25"></slider-control>
+      </panel-section>
+
+      <panel-section title="Colors">
+        <oklch-picker key="bg" label="Background" lightness="0.18" chroma="0.05" hue="275"></oklch-picker>
+        <oklch-picker key="grid" label="Grid" lightness="0.9" chroma="0.02" hue="100"></oklch-picker>
+        <oklch-picker key="node" label="Nodes" lightness="0.92" chroma="0.08" hue="90"></oklch-picker>
+      </panel-section>
+
+      <panel-section title="Motion">
+        <slider-control key="rotationSpeed" label="Rotation" min="-1" max="1" step="0.01" value="0"></slider-control>
+        <slider-control key="twinkleRate" label="Twinkle" min="0" max="1" step="0.01" value="0"></slider-control>
+        <slider-control key="pulseAmplitude" label="Pulse" min="0" max="1" step="0.01" value="0"></slider-control>
+      </panel-section>
+    </control-panel>
+
+    <canvas id="canvas"></canvas>
+    
+    <script type="module" src="../../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+    <!-- Note: script.js is now a module for state persistence -->
+  </body>
+</html>
