@@ -46,5 +46,80 @@
       "asciiColor": true
     },
     "createdAt": "2026-02-04T13:56:43.100Z"
+  },
+  {
+    "name": "Snapshot 3",
+    "state": {
+      "image": "flower3",
+      "grainAmount": 0.13,
+      "grainSize": 2,
+      "grainAnimated": false,
+      "ditherMode": "bayer8",
+      "ditherIntensity": 0.12,
+      "ditherColors": 11,
+      "halftoneAmount": 0.09,
+      "halftoneSize": 6,
+      "halftoneAngle": 30,
+      "halftoneCMYK": false,
+      "pixelSize": 21,
+      "pixelShape": "square",
+      "brightness": 1.15,
+      "posterize": 32,
+      "saturation": 0.95,
+      "contrast": 1.35,
+      "asciiSize": 0,
+      "asciiColor": true
+    },
+    "createdAt": "2026-02-04T14:12:55.486Z"
+  },
+  {
+    "name": "Snapshot 4",
+    "state": {
+      "image": "flower3",
+      "grainAmount": 0.13,
+      "grainSize": 2,
+      "grainAnimated": false,
+      "ditherMode": "bayer8",
+      "ditherIntensity": 0.12,
+      "ditherColors": 11,
+      "halftoneAmount": 0.09,
+      "halftoneSize": 6,
+      "halftoneAngle": 30,
+      "halftoneCMYK": false,
+      "pixelSize": 20,
+      "pixelShape": "square",
+      "brightness": 1.25,
+      "posterize": 32,
+      "saturation": 0.95,
+      "contrast": 1.35,
+      "asciiSize": 0,
+      "asciiColor": true
+    },
+    "createdAt": "2026-02-04T14:14:09.188Z"
+  },
+  {
+    "name": "Snapshot 5",
+    "state": {
+      "image": "flower3",
+      "grainAmount": 0.13,
+      "grainSize": 2,
+      "grainAnimated": false,
+      "ditherMode": "bayer8",
+      "ditherIntensity": 0.12,
+      "ditherColors": 11,
+      "halftoneAmount": 0.09,
+      "halftoneSize": 6,
+      "halftoneAngle": 30,
+      "halftoneCMYK": false,
+      "pixelSize": 26,
+      "pixelShape": "square",
+      "brightness": 1.4,
+      "posterize": 32,
+      "saturation": 0.95,
+      "contrast": 1.35,
+      "asciiSize": 0,
+      "asciiColor": true
+    },
+    "createdAt": "2026-02-04T14:16:23.212Z"
   }
 ]

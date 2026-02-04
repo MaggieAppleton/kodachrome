@@ -24,6 +24,7 @@ const defaults = {
   pixelSize: 1,
   pixelShape: 'square',
   // Color
+  brightness: 1,
   posterize: 32,
   saturation: 1,
   contrast: 1,
@@ -54,8 +55,16 @@ async function loadImage(name) {
   
   await new Promise((resolve, reject) => {
     img.onload = resolve;
-    img.onerror = reject;
-    img.src = `./${name}.png`;
+    img.onerror = (e) => {
+      console.error(`Failed to load image: ${name}`, e);
+      reject(e);
+    };
+    // Try JPG first, fallback to PNG
+    img.src = `./${name}.jpg`;
+    img.onerror = () => {
+      img.onerror = reject;
+      img.src = `./${name}.png`;
+    };
   });
   
   images[name] = img;

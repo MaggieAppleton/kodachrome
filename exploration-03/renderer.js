@@ -87,6 +87,7 @@ export function createRenderer(canvas) {
     pixelSize: gl.getUniformLocation(program, 'u_pixelSize'),
     pixelShape: gl.getUniformLocation(program, 'u_pixelShape'),
     // Color
+    brightness: gl.getUniformLocation(program, 'u_brightness'),
     posterize: gl.getUniformLocation(program, 'u_posterize'),
     saturation: gl.getUniformLocation(program, 'u_saturation'),
     contrast: gl.getUniformLocation(program, 'u_contrast'),
@@ -191,6 +192,7 @@ export function createRenderer(canvas) {
     gl.uniform1i(uniforms.pixelShape, pixelShapeMap[state.pixelShape] || 0);
     
     // Color
+    gl.uniform1f(uniforms.brightness, state.brightness || 1);
     gl.uniform1f(uniforms.posterize, state.posterize || 32);
     gl.uniform1f(uniforms.saturation, state.saturation || 1);
     gl.uniform1f(uniforms.contrast, state.contrast || 1);

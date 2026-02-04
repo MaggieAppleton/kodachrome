@@ -43,6 +43,7 @@ export const fragmentShader = `
   uniform int u_pixelShape; // 0=square, 1=circle, 2=diamond
   
   // Color
+  uniform float u_brightness;
   uniform float u_posterize;
   uniform float u_saturation;
   uniform float u_contrast;
@@ -250,6 +251,11 @@ export const fragmentShader = `
   }
   
   vec3 applyColorAdjustments(vec3 color) {
+    // Brightness
+    if (u_brightness != 1.0) {
+      color *= u_brightness;
+    }
+    
     // Saturation
     if (u_saturation != 1.0) {
       vec3 hsv = rgb2hsv(color);

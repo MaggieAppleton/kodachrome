@@ -10,5 +10,17 @@
       "glowH": 146.08695652173913
     },
     "createdAt": "2026-02-04T14:02:58.049Z"
+  },
+  {
+    "name": "Snapshot 2",
+    "state": {
+      "speed": 0.75,
+      "glowIntensity": 0.7,
+      "glowSize": 14,
+      "glowL": 0.8333333333333334,
+      "glowC": 0.185,
+      "glowH": 140.8695652173913
+    },
+    "createdAt": "2026-02-04T14:16:41.872Z"
   }
 ]
