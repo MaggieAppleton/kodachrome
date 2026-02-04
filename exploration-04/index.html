@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 04 - Pixel Loaders</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    <snapshot-manager></snapshot-manager>
+    
+    <control-panel title="Pixel Loaders">
+      <panel-section title="Animation">
+        <slider-control key="speed" label="Speed" min="0.25" max="3" step="0.25" value="1"></slider-control>
+      </panel-section>
+
+      <panel-section title="Glow">
+        <slider-control key="glowIntensity" label="Intensity" min="0" max="1" step="0.05" value="0.7"></slider-control>
+        <slider-control key="glowSize" label="Size" min="0" max="20" step="1" value="8"></slider-control>
+      </panel-section>
+
+      <panel-section title="Color">
+        <oklch-picker key="glow" label="Glow color" lightness="0.7" chroma="0.2" hue="145"></oklch-picker>
+      </panel-section>
+    </control-panel>
+
+    <div class="loader-grid">
+      <div class="loader-container">
+        <div class="loader" data-pattern="wave-lr"></div>
+        <span class="loader-label">wave-lr</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="wave-rl"></div>
+        <span class="loader-label">wave-rl</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="wave-tb"></div>
+        <span class="loader-label">wave-tb</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="wave-bt"></div>
+        <span class="loader-label">wave-bt</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="spiral-cw"></div>
+        <span class="loader-label">spiral-cw</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="spiral-ccw"></div>
+        <span class="loader-label">spiral-ccw</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="diagonal-tl"></div>
+        <span class="loader-label">diagonal-tl</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="pulse-center"></div>
+        <span class="loader-label">pulse-center</span>
+      </div>
+      <div class="loader-container">
+        <div class="loader" data-pattern="corners"></div>
+        <span class="loader-label">corners</span>
+      </div>
+    </div>
+    
+    <script type="module" src="../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

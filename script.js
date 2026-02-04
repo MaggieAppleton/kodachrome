@@ -14,6 +14,11 @@ const explorations = [
     title: "Image Treatments",
     desc: "Grain, dithering, halftone, pixelation, and ASCII effects",
   },
+  {
+    id: "exploration-04",
+    title: "Pixel Loaders",
+    desc: "Animated 3×3 pixel grids with glow effects",
+  },
 ];
 
 const grid = document.getElementById("grid");

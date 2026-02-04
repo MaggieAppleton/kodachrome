@@ -22,5 +22,29 @@
       "asciiColor": true
     },
     "createdAt": "2026-02-04T13:46:38.983Z"
+  },
+  {
+    "name": "Snapshot 2",
+    "state": {
+      "image": "flower2",
+      "grainAmount": 0.14,
+      "grainSize": 2.5,
+      "grainAnimated": false,
+      "ditherMode": "bayer4",
+      "ditherIntensity": 0.29,
+      "ditherColors": 6,
+      "halftoneAmount": 0,
+      "halftoneSize": 7,
+      "halftoneAngle": 35,
+      "halftoneCMYK": false,
+      "pixelSize": 13,
+      "pixelShape": "circle",
+      "posterize": 20,
+      "saturation": 0.7,
+      "contrast": 1.6,
+      "asciiSize": 0,
+      "asciiColor": true
+    },
+    "createdAt": "2026-02-04T13:56:43.100Z"
   }
 ]

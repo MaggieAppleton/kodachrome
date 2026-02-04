@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "speed": 0.75,
+      "glowIntensity": 0.4,
+      "glowSize": 8,
+      "glowL": 0.8333333333333334,
+      "glowC": 0.185,
+      "glowH": 146.08695652173913
+    },
+    "createdAt": "2026-02-04T14:02:58.049Z"
+  }
+]
