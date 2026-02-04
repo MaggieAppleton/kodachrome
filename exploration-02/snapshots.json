@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "color1L": 0.8985507246376812,
+      "color1C": 0.1260144927536232,
+      "color1H": 88.69565217391305,
+      "color2L": 0.8913043478260869,
+      "color2C": 0.0831159420289855,
+      "color2H": 245.21739130434784,
+      "color3L": 0.7898550724637681,
+      "color3C": 0.09384057971014494,
+      "color3H": 323.4782608695652,
+      "speed": 0.47,
+      "blobSize": 0.7,
+      "softness": 0.35,
+      "complexity": 2,
+      "grainStyle": "film",
+      "grainIntensity": 0.21,
+      "halftoneSize": 5.5,
+      "scale": 2.9
+    },
+    "createdAt": "2026-02-04T12:26:24.001Z"
+  },
+  {
+    "name": "Snapshot 2",
+    "state": {
+      "color1L": 0.21739130434782608,
+      "color1C": 0.13405797101449274,
+      "color1H": 279.1304347826087,
+      "color2L": 0.34057971014492755,
+      "color2C": 0.26007246376811594,
+      "color2H": 305.2173913043478,
+      "color3L": 0.5797101449275363,
+      "color3C": 0.24398550724637683,
+      "color3H": 242.6086956521739,
+      "speed": 0.22,
+      "blobSize": 0.9,
+      "softness": 0.75,
+      "complexity": 2,
+      "grainStyle": "film",
+      "grainIntensity": 0.21,
+      "halftoneSize": 5.5,
+      "scale": 2.9
+    },
+    "createdAt": "2026-02-04T12:29:04.846Z"
+  },
+  {
+    "name": "Snapshot 3",
+    "state": {
+      "color1L": 0.8985507246376812,
+      "color1C": 0.1260144927536232,
+      "color1H": 88.69565217391305,
+      "color2L": 0.8913043478260869,
+      "color2C": 0.0831159420289855,
+      "color2H": 245.21739130434784,
+      "color3L": 0.7898550724637681,
+      "color3C": 0.09384057971014494,
+      "color3H": 323.4782608695652,
+      "speed": 0.47,
+      "blobSize": 0.6,
+      "softness": 0.55,
+      "complexity": 2,
+      "grainStyle": "film",
+      "grainIntensity": 0.14,
+      "halftoneSize": 3.5,
+      "scale": 2.9
+    },
+    "createdAt": "2026-02-04T12:38:44.077Z"
+  }
+]

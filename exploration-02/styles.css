@@ -14,12 +14,19 @@ canvas {
   top: 16px;
   left: 16px;
   z-index: 10;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 14px;
-  padding: 8px 10px;
-  background: rgba(0,0,0,0.45);
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.2);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  padding: 6px 10px;
+  background: rgba(14, 12, 16, 0.7);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.back:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
 }

@@ -95,6 +95,13 @@ const syncControlsWithState = () => {
   });
 };
 
+// Listen for snapshot loads
+document.addEventListener('snapshot-load', (event) => {
+  const { state: newState } = event.detail;
+  Object.assign(state, newState);
+  syncControlsWithState();
+});
+
 // Wait for custom elements to be ready, then sync
 Promise.all([
   customElements.whenDefined('slider-control'),
