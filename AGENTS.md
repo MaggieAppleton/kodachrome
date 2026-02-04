@@ -18,4 +18,156 @@ How to work here:
 - Do not use git worktrees in this repo.
 - Do not use the TDD skill in this repo.
 
-If you’re unsure, ask.
+If you're unsure, ask.
+
+---
+
+## Creating a New Exploration
+
+When asked to create a new exploration, ALWAYS include the control panel components and snapshot persistence. Follow this structure:
+
+### 1. Create the folder
+Find the next available number (e.g., `exploration-05`) and create the folder at the repo root.
+
+### 2. Required files
+
+**index.html** — Use this template:
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration XX - Title</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    <snapshot-manager></snapshot-manager>
+    
+    <control-panel title="Exploration Title">
+      <panel-section title="Section Name">
+        <!-- Add controls here -->
+      </panel-section>
+    </control-panel>
+
+    <canvas id="canvas"></canvas>
+    
+    <script type="module" src="../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
+```
+
+**styles.css** — Use this base (do NOT use `* { margin: 0; padding: 0; }` resets):
+```css
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #1a1a1c;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.back {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 12px;
+  padding: 6px 10px;
+  background: rgba(14, 12, 16, 0.7);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.back:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+```
+
+**script.js** — Include state persistence:
+```js
+import { createPersistence } from '../shared/state-persistence.js';
+
+const persistence = createPersistence('exploration-XX');
+const savedState = persistence.load();
+const state = { ...defaults, ...(savedState || {}) };
+
+// Listen for control changes
+document.addEventListener('control-change', (event) => {
+  const { key, value } = event.detail;
+  
+  // Handle color picker values (object with l, c, h)
+  if (typeof value === 'object' && value !== null) {
+    state[`${key}L`] = value.l;
+    state[`${key}C`] = value.c;
+    state[`${key}H`] = value.h;
+  } else {
+    state[key] = value;
+  }
+  
+  persistence.save(state);
+  render(); // or whatever triggers a redraw
+});
+
+// Listen for snapshot loads
+document.addEventListener('snapshot-load', (event) => {
+  const { state: newState } = event.detail;
+  Object.assign(state, newState);
+  syncControlsWithState();
+  render();
+});
+```
+
+### 3. Available control components
+
+All controls emit `control-change` events with `{ key, value }` in `event.detail`.
+
+```html
+<!-- Numeric slider -->
+<slider-control key="speed" label="Speed" min="0" max="1" step="0.01" value="0.5"></slider-control>
+
+<!-- OKLCH color picker (value is { l, c, h }) -->
+<oklch-picker key="bg" label="Background" lightness="0.5" chroma="0.15" hue="200"></oklch-picker>
+
+<!-- Dropdown select -->
+<select-control key="mode" label="Mode" value="default" options="default:Default,alt:Alternative"></select-control>
+
+<!-- Checkbox -->
+<checkbox-control key="enabled" label="Enabled" checked="true"></checkbox-control>
+```
+
+### 4. Register in the main grid
+
+Add the new exploration to `script.js` at the repo root:
+```js
+const explorations = [
+  // ... existing entries
+  {
+    id: "exploration-XX",
+    title: "Title",
+    desc: "Short description",
+  },
+];
+```
+
+### 5. Important paths
+
+- Controls import: `../shared/controls/index.js` (one level up)
+- State persistence: `../shared/state-persistence.js` (one level up)
+- Back link: `../index.html`
