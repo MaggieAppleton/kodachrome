@@ -1,6 +1,6 @@
 # Kodachrome
 
-A playground for developing the GitHub Next visual brand. Contains isolated experiments exploring gradients, grain, dithering, textures, and motion.
+A playground for developing visual experiments. Contains isolated experiments exploring canvas gradients, grain, dithering, textures, and motion.
 
 ## Getting Started
 
