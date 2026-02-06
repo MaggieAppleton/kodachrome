@@ -1,14 +1,6 @@
-This repo is Kodachrome – a playground for developing the Github Next visual brand.
+This repo is Kodachrome – a playground for making visual experiments.
 
 The main thing here right now is a grid of experiments: each card opens a full-screen canvas page where I can explore gradients, grain, dithering, textures, images, and motion. These experiments are deliberately isolated so I can try different visual directions without the rest of the system getting messy.
-
-The end goal is a new Github Next website with a lot of publishing. We'll need patterns for project listings, blog posts, link commentary, and other editorial bits. This repo is me stress-testing the visual language – colours, typography, shadows, backgrounds, header treatments, and more – before we lock anything down.
-
-What exists today:
-- Reusable control panels in `shared/controls/`
-- State persistence in `shared/state-persistence.js`
-- Individual experiment folders under `exploration-XX/` with their own HTML/CSS/JS
-- Automated thumbnail generation via `npm run thumbnails`
 
 How to work here:
 - Keep it simple: no frameworks unless we explicitly decide to add them.
