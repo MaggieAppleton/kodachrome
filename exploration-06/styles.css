@@ -1,0 +1,218 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color, #0a0a0a);
+  transition: background 0.3s ease;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.back {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 12px;
+  padding: 6px 10px;
+  background: rgba(14, 12, 16, 0.7);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.back:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.loader-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  padding: 2rem;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-full {
+  width: 20px;
+  height: auto;
+  color: var(--glow-color, #6F9B7E);
+  filter: drop-shadow(0 0 var(--glow-size, 4px) var(--glow-color-shadow, #6F9B7E));
+}
+
+.loader-label {
+  color: var(--label-color, rgba(255, 255, 255, 0.4));
+  font-size: 0.75rem;
+  font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+  transition: color 0.3s ease;
+}
+
+/* Animation: Rotate */
+[data-animation="rotate"] .logo-full {
+  animation: rotate var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  /* Optical center for the triangular shape - shifted left and down from geometric center */
+  transform-origin: 42% 58%;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Animation: Pulse */
+[data-animation="pulse"] .logo-full {
+  animation: pulse var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    filter: drop-shadow(0 0 2px var(--glow-color-shadow, #6F9B7E));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 var(--glow-size-max, 8px) var(--glow-color-shadow, #6F9B7E));
+  }
+}
+
+/* Animation: Alternate */
+[data-animation="alternate"] .part-large {
+  animation: fadeIn var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+}
+
+[data-animation="alternate"] .part-small {
+  animation: fadeIn var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  animation-delay: calc(var(--animation-duration, 1.2s) / 2);
+}
+
+@keyframes fadeIn {
+  0%, 45%, 100% { opacity: 0.2; }
+  50%, 95% { opacity: 1; }
+}
+
+/* Animation: Bounce */
+[data-animation="bounce"] .logo-full {
+  animation: bounce var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+  }
+  30% {
+    transform: scaleY(0.8) scaleX(1.1);
+  }
+  50% {
+    transform: scaleY(1.15) scaleX(0.95);
+  }
+  70% {
+    transform: scaleY(0.95) scaleX(1.02);
+  }
+}
+
+/* Animation: Swing */
+[data-animation="swing"] .logo-full {
+  animation: swing var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  transform-origin: center top;
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-15deg); }
+}
+
+/* Animation: Flicker */
+[data-animation="flicker"] .logo-full {
+  animation: flicker var(--animation-duration, 1.2s) steps(1) infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; filter: drop-shadow(0 0 var(--glow-size-max, 8px) var(--glow-color-shadow, #6F9B7E)); }
+  10% { opacity: 0.3; filter: drop-shadow(0 0 2px var(--glow-color-shadow, #6F9B7E)); }
+  20% { opacity: 1; filter: drop-shadow(0 0 var(--glow-size-max, 8px) var(--glow-color-shadow, #6F9B7E)); }
+  30% { opacity: 0.6; filter: drop-shadow(0 0 4px var(--glow-color-shadow, #6F9B7E)); }
+  40% { opacity: 1; filter: drop-shadow(0 0 var(--glow-size-max, 8px) var(--glow-color-shadow, #6F9B7E)); }
+  50% { opacity: 0.2; filter: drop-shadow(0 0 1px var(--glow-color-shadow, #6F9B7E)); }
+  60% { opacity: 0.8; filter: drop-shadow(0 0 6px var(--glow-color-shadow, #6F9B7E)); }
+  70% { opacity: 1; filter: drop-shadow(0 0 var(--glow-size-max, 8px) var(--glow-color-shadow, #6F9B7E)); }
+  80% { opacity: 0.4; filter: drop-shadow(0 0 3px var(--glow-color-shadow, #6F9B7E)); }
+  90% { opacity: 1; filter: drop-shadow(0 0 var(--glow-size-max, 8px) var(--glow-color-shadow, #6F9B7E)); }
+}
+
+/* Animation: Step Rotate (90deg increments with pauses) */
+[data-animation="step-rotate"] .logo-full {
+  animation: stepRotate calc(var(--animation-duration, 1.2s) * 2) var(--animation-easing, ease-in-out) infinite;
+  transform-origin: 42% 58%;
+}
+
+@keyframes stepRotate {
+  0%, 10% { transform: rotate(0deg); }
+  15%, 35% { transform: rotate(90deg); }
+  40%, 60% { transform: rotate(180deg); }
+  65%, 85% { transform: rotate(270deg); }
+  90%, 100% { transform: rotate(360deg); }
+}
+
+/* Animation: Flip (Y-axis) */
+[data-animation="flip"] .logo-full {
+  animation: flip var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  transform-origin: 42% 58%;
+}
+
+@keyframes flip {
+  0% { transform: perspective(200px) rotateY(0deg); }
+  50% { transform: perspective(200px) rotateY(180deg); }
+  100% { transform: perspective(200px) rotateY(360deg); }
+}
+
+/* Animation: Morph (parts scale in sequence) */
+[data-animation="morph"] .part-large {
+  animation: morphLarge var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+[data-animation="morph"] .part-small {
+  animation: morphSmall var(--animation-duration, 1.2s) var(--animation-easing, ease-in-out) infinite;
+  transform-origin: center center;
+  transform-box: fill-box;
+}
+
+@keyframes morphLarge {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(0.7); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+}
+
+@keyframes morphSmall {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(0.6); }
+}

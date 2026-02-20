@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "primaryColorL": 0.6304347826086957,
+      "primaryColorC": 0.20376811594202898,
+      "primaryColorH": 161.7391304347826,
+      "secondaryColorL": 0.5797101449275363,
+      "secondaryColorC": 0.3110144927536232,
+      "secondaryColorH": 280,
+      "skyColorL": 0.10869565217391304,
+      "skyColorC": 0.10456521739130434,
+      "skyColorH": 220,
+      "intensity": 0.75,
+      "curtainCount": 2,
+      "waveSpeed": 0.15,
+      "verticalStretch": 0.3,
+      "starDensity": 1,
+      "starBrightness": 0.95
+    },
+    "createdAt": "2026-02-04T17:28:23.304Z"
+  },
+  {
+    "name": "Snapshot 2",
+    "state": {
+      "primaryColorL": 0.5869565217391305,
+      "primaryColorC": 0.22521739130434784,
+      "primaryColorH": 161.7391304347826,
+      "secondaryColorL": 0.4420289855072464,
+      "secondaryColorC": 0.3244202898550725,
+      "secondaryColorH": 279.1304347826087,
+      "skyColorL": 0.13768115942028986,
+      "skyColorC": 0.0777536231884058,
+      "skyColorH": 220,
+      "intensity": 1,
+      "curtainCount": 3,
+      "waveSpeed": 0.7,
+      "verticalStretch": 1.25,
+      "starDensity": 0.9,
+      "starBrightness": 1
+    },
+    "createdAt": "2026-02-04T17:33:19.018Z"
+  }
+]

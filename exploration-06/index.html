@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 06 - Logo Loaders</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    <snapshot-manager></snapshot-manager>
+    
+    <control-panel title="Logo Loaders">
+      <panel-section title="Theme">
+        <select-control key="theme" label="Background" value="dark" options="dark:Dark,light:Light"></select-control>
+      </panel-section>
+
+      <panel-section title="Animation">
+        <slider-control key="speed" label="Speed" min="0.25" max="3" step="0.25" value="1"></slider-control>
+        <select-control key="easing" label="Easing" value="ease-in-out" options="linear:Linear,ease:Ease,ease-in:Ease In,ease-out:Ease Out,ease-in-out:Ease In-Out,quad-in:Quad In,quad-out:Quad Out,quad-in-out:Quad In-Out,cubic-in:Cubic In,cubic-out:Cubic Out,cubic-in-out:Cubic In-Out,quart-in:Quart In,quart-out:Quart Out,quart-in-out:Quart In-Out,circ-in:Circ In,circ-out:Circ Out,circ-in-out:Circ In-Out,back-in:Back In,back-out:Back Out,back-in-out:Back In-Out"></select-control>
+      </panel-section>
+
+      <panel-section title="Glow">
+        <slider-control key="glowIntensity" label="Intensity" min="0" max="1" step="0.05" value="0.8"></slider-control>
+        <slider-control key="glowSize" label="Size" min="0" max="10" step="0.5" value="4"></slider-control>
+      </panel-section>
+
+      <panel-section title="Color">
+        <oklch-picker key="glow" label="Glow color" lightness="0.7" chroma="0.15" hue="145"></oklch-picker>
+      </panel-section>
+    </control-panel>
+
+    <div class="loader-grid">
+      <!-- Variation 1: Rotating full logo -->
+      <div class="loader-container">
+        <div class="loader" data-animation="rotate">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">rotate</span>
+      </div>
+
+      <!-- Variation 2: Pulsing glow -->
+      <div class="loader-container">
+        <div class="loader" data-animation="pulse">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">pulse</span>
+      </div>
+
+      <!-- Variation 3: Alternating parts -->
+      <div class="loader-container">
+        <div class="loader" data-animation="alternate">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">alternate</span>
+      </div>
+
+      <!-- Variation 4: Bounce scale -->
+      <div class="loader-container">
+        <div class="loader" data-animation="bounce">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">bounce</span>
+      </div>
+
+      <!-- Variation 5: Swing/tilt -->
+      <div class="loader-container">
+        <div class="loader" data-animation="swing">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">swing</span>
+      </div>
+
+      <!-- Variation 6: Flicker/flash -->
+      <div class="loader-container">
+        <div class="loader" data-animation="flicker">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">flicker</span>
+      </div>
+
+      <!-- Variation 7: Step rotation (90deg increments) -->
+      <div class="loader-container">
+        <div class="loader" data-animation="step-rotate">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">step-rotate</span>
+      </div>
+
+      <!-- Variation 8: Flip (Y-axis rotation) -->
+      <div class="loader-container">
+        <div class="loader" data-animation="flip">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">flip</span>
+      </div>
+
+      <!-- Variation 9: Morph (parts scale in sequence) -->
+      <div class="loader-container">
+        <div class="loader" data-animation="morph">
+          <svg class="logo-full" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="part-large" d="M13.1548 4.67113C13.2944 4.90714 13.2959 5.20003 13.1588 5.43747L6.44129 17.0728C6.30561 17.3078 6.05487 17.4525 5.78352 17.4525H0.760661C0.175975 17.4525 -0.189452 16.8196 0.102891 16.3132L9.30196 0.37977C9.59256 -0.123562 10.3177 -0.127323 10.6135 0.37297L13.1548 4.67113Z" fill="currentColor"/>
+            <path class="part-small" d="M19.8933 16.3064C20.1927 16.8127 19.8277 17.4525 19.2395 17.4525H14.1816C13.913 17.4525 13.6645 17.3107 13.5278 17.0796L10.6909 12.2815C10.3915 11.7752 10.7565 11.1354 11.3447 11.1354H16.4026C16.6711 11.1354 16.9197 11.2772 17.0564 11.5083L19.8933 16.3064Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <span class="loader-label">morph</span>
+      </div>
+    </div>
+    
+    <script type="module" src="../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

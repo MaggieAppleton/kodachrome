@@ -19,6 +19,21 @@ const explorations = [
     title: "Pixel Loaders",
     desc: "Animated 3×3 pixel grids with glow effects",
   },
+  {
+    id: "exploration-05",
+    title: "Northern Lights",
+    desc: "Animated aurora borealis with stars",
+  },
+  {
+    id: "exploration-06",
+    title: "Logo Loaders",
+    desc: "Animated loading patterns with logo shapes",
+  },
+  {
+    id: "exploration-07",
+    title: "Gradient Swirls",
+    desc: "Domain-warped gradient swirls with grain and light",
+  },
 ];
 
 const grid = document.getElementById("grid");

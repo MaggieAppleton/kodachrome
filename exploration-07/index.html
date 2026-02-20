@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 07 - Gradient Swirls</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    <snapshot-manager></snapshot-manager>
+
+    <control-panel title="Gradient Swirls">
+      <panel-section title="Color">
+        <oklch-picker key="baseColor" label="Base Color" lightness="0.55" chroma="0.15" hue="80"></oklch-picker>
+        <slider-control key="colorRange" label="Tonal Range" min="0.05" max="0.5" step="0.01" value="0.2"></slider-control>
+        <slider-control key="colorShift" label="Hue Shift" min="0" max="60" step="1" value="15"></slider-control>
+      </panel-section>
+
+      <panel-section title="Warp">
+        <slider-control key="warpStrength" label="Strength" min="0" max="3" step="0.05" value="1.2"></slider-control>
+        <slider-control key="warpScale" label="Scale" min="0.5" max="5" step="0.1" value="2.0"></slider-control>
+        <slider-control key="warpDetail" label="Detail" min="1" max="6" step="1" value="3"></slider-control>
+      </panel-section>
+
+      <panel-section title="Light">
+        <slider-control key="lightX" label="Position X" min="0" max="1" step="0.01" value="0.6"></slider-control>
+        <slider-control key="lightY" label="Position Y" min="0" max="1" step="0.01" value="0.3"></slider-control>
+        <slider-control key="lightIntensity" label="Intensity" min="0" max="1" step="0.01" value="0.3"></slider-control>
+        <slider-control key="lightSize" label="Size" min="0.1" max="1" step="0.01" value="0.4"></slider-control>
+      </panel-section>
+
+      <panel-section title="Motion">
+        <slider-control key="speed" label="Speed" min="0" max="1" step="0.01" value="0.15"></slider-control>
+      </panel-section>
+
+      <panel-section title="Grain">
+        <slider-control key="grainIntensity" label="Intensity" min="0" max="0.4" step="0.01" value="0.12"></slider-control>
+        <slider-control key="grainSize" label="Size" min="0.5" max="3" step="0.1" value="1.0"></slider-control>
+      </panel-section>
+    </control-panel>
+
+    <canvas id="canvas"></canvas>
+
+    <script type="module" src="../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

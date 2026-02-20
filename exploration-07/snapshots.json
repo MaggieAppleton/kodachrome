@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "baseColorL": 0.7608695652173914,
+      "baseColorC": 0.2144927536231884,
+      "baseColorH": 83.47826086956522,
+      "colorRange": 0.1,
+      "colorShift": 45,
+      "warpStrength": 0.45,
+      "warpScale": 1.8,
+      "warpDetail": 4,
+      "lightX": 0.15,
+      "lightY": 0.55,
+      "lightIntensity": 0.22,
+      "lightSize": 0.56,
+      "speed": 0.11,
+      "grainIntensity": 0.12,
+      "grainSize": 2.1
+    },
+    "createdAt": "2026-02-20T12:17:36.391Z"
+  },
+  {
+    "name": "Snapshot 2",
+    "state": {
+      "baseColorL": 0.6811594202898551,
+      "baseColorC": 0.15818840579710144,
+      "baseColorH": 138.26086956521738,
+      "colorRange": 0.1,
+      "colorShift": 45,
+      "warpStrength": 0.45,
+      "warpScale": 0.8,
+      "warpDetail": 4,
+      "lightX": 0.5,
+      "lightY": 0.63,
+      "lightIntensity": 0.44,
+      "lightSize": 0.56,
+      "speed": 0.11,
+      "grainIntensity": 0.12,
+      "grainSize": 2.1
+    },
+    "createdAt": "2026-02-20T12:18:27.092Z"
+  },
+  {
+    "name": "Snapshot 3",
+    "state": {
+      "baseColorL": 0.6811594202898551,
+      "baseColorC": 0.12333333333333332,
+      "baseColorH": 276.52173913043475,
+      "colorRange": 0.1,
+      "colorShift": 45,
+      "warpStrength": 0.45,
+      "warpScale": 0.8,
+      "warpDetail": 3,
+      "lightX": 0.5,
+      "lightY": 0.4,
+      "lightIntensity": 0.3,
+      "lightSize": 0.72,
+      "speed": 0.16,
+      "grainIntensity": 0.12,
+      "grainSize": 2.1
+    },
+    "createdAt": "2026-02-20T12:19:08.584Z"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Snapshot 1",
+    "state": {
+      "theme": "light",
+      "speed": 0.75,
+      "easing": "back-in-out",
+      "glowIntensity": 0.2,
+      "glowSize": 3.5,
+      "glowL": 0.7536231884057971,
+      "glowC": 0.13942028985507246,
+      "glowH": 135.65217391304347
+    },
+    "createdAt": "2026-02-05T15:38:56.367Z"
+  }
+]

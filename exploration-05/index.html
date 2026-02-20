@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Exploration 05 - Northern Lights</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="back" href="../index.html">Back</a>
+    <snapshot-manager></snapshot-manager>
+    
+    <control-panel title="Northern Lights">
+      <panel-section title="Colors">
+        <oklch-picker key="primaryColor" label="Primary" lightness="0.75" chroma="0.22" hue="155"></oklch-picker>
+        <oklch-picker key="secondaryColor" label="Secondary" lightness="0.5" chroma="0.15" hue="280"></oklch-picker>
+        <oklch-picker key="skyColor" label="Sky" lightness="0.15" chroma="0.05" hue="220"></oklch-picker>
+      </panel-section>
+
+      <panel-section title="Aurora">
+        <slider-control key="intensity" label="Intensity" min="0.1" max="2" step="0.05" value="1"></slider-control>
+        <slider-control key="curtainCount" label="Curtains" min="2" max="8" step="1" value="4"></slider-control>
+        <slider-control key="waveSpeed" label="Wave Speed" min="0.1" max="2" step="0.05" value="0.5"></slider-control>
+        <slider-control key="verticalStretch" label="Height" min="0.3" max="1.5" step="0.05" value="0.8"></slider-control>
+      </panel-section>
+
+      <panel-section title="Stars">
+        <slider-control key="starDensity" label="Density" min="0" max="1" step="0.05" value="0.5"></slider-control>
+        <slider-control key="starBrightness" label="Brightness" min="0.2" max="1" step="0.05" value="0.6"></slider-control>
+      </panel-section>
+    </control-panel>
+
+    <canvas id="canvas"></canvas>
+    
+    <script type="module" src="../shared/controls/index.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
